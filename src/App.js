@@ -6,6 +6,9 @@ import player from "./players.json";
 import teamID from "./models/NBAdata";
 
 function App() {
+  const teams = teamID.map((team, key) => {
+    return <Team team={team} key={key} />;
+  });
   // const [team, setTeam] = useState(null);
   // const fetchTeam = async () => {
   //   const response = await fetch("players");
@@ -17,10 +20,11 @@ function App() {
   // useEffect(() => {
   //   fetchTeam(), [];
   // });
-  const teams = player.league.standard.map((tm, key) => {
-    return <Team team={tm} key={key} />;
-  });
+  // const teams = player.league.standard.map((tm, key) => {
+  //   return <Team team={tm} key={key} />;
+  // });
   return <div className="App">{teams}</div>;
+  // return <div className="App">{teams}</div>;
 }
 
 export default App;

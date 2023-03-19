@@ -13,7 +13,7 @@ const teamID = [
     },
     {
         team: "Charlotte Hornets",
-        id: "1610612766 "
+        id: "1610612766"
     },
     {
         team: "Cleveland Cavaliers",
@@ -21,7 +21,7 @@ const teamID = [
     },
     {
         team: "Chicago Bulls",
-        id: "1610612741 "
+        id: "1610612741"
     },
     {
         team: "Dallas Mavericks",
