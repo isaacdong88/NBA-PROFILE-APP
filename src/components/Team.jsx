@@ -2,7 +2,7 @@ import React from 'react'
 
 function Team(props) {
   return (
-    <div>{props.team.firstName}</div>
+    <div>{props.team.firstName} {props.team.lastName}</div>
   )
 }
 
