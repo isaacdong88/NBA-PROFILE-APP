@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     setDisplay(teams);
   }, []);
-  // const [team, setTeam] = useState(null);
+
   // const fetchTeam = async () => {
   //   const response = await fetch("players");
   //   const data = await response.json();
@@ -27,8 +27,12 @@ function App() {
   // const teams = player.league.standard.map((tm, key) => {
   //   return <Team team={tm} key={key} />;
   // });
-  return <div className="App">{display}</div>;
-  // return <div className="App">{teams}</div>;
+  return (
+    <div className="App">
+      <TeamDisplay teamsDisplay={display} />
+    </div>
+    // return <div className="App">{teams}</div>;
+  );
 }
 
 export default App;

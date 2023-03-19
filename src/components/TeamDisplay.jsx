@@ -1,8 +1,10 @@
 import React from 'react'
 
-function TeamDisplay() {
+function TeamDisplay(props) {
   return (
-    <div>TeamDisplay</div>
+    <div>
+      {props.teamsDisplay}
+    </div>
   )
 }
 
