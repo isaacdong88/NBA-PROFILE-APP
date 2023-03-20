@@ -4,16 +4,24 @@ import { useEffect } from 'react';
 
 function Player(props) {
     const searchTerm = props.player.lastName
-    const fetchTeam = async () => {
-        const response = await fetch(`https://www.balldontlie.io/api/v1/players?search=${searchTerm}`);
+    const getPlayer = async () => {
+        const response = await fetch(`https://www.balldontlie.io/api/v1/players?search=${searchTerm}&per_page=100`);
         const data = await response.json();
         const player = data.data.filter((player) => player.first_name === props.player.firstName)[0]
-        console.log(data)
+        // console.log(data)
         console.log(player);
+        // const playerID = player.id
+        // console.log(playerID)
+        // const getStats = async () => {
+        //     const response2 = await fetch(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerID}`)
+        //     const data2 = await response2.json()
+        //     const stats = data2.data.
+
+        // }
       };
 
       useEffect(() => {
-        fetchTeam();
+        getPlayer();
       }, []);
   return (
     <div>
