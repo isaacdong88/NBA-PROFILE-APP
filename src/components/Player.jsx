@@ -16,9 +16,9 @@ function Player(props) {
       };
       console.log(playerId)
 
-      useEffect(() => {
-        getPlayer();
-      }, []);
+    //   useEffect(() => {
+    //     getPlayer();
+    //   }, []);
 
     // const getStats = async () => {
     //     const response2 = await fetch(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerID}`)
@@ -29,7 +29,7 @@ function Player(props) {
     // getStats()
 
   return (
-    <div>
+    <div onClick={getPlayer}>
         <img className='playerImg' src={`http://cdn.nba.com/headshots/nba/latest/260x190/${props.player.personId}.png`} alt="" onError={event => {event.target.src = noImg}} />
         <div>{props.player.firstName} {props.player.lastName}</div>
     </div>
