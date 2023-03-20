@@ -4,11 +4,32 @@ import { useState, useEffect } from "react";
 import Team from "./components/Team";
 import player from "./players.json";
 import teamID from "./models/NBAdata";
+import Player from "./components/Player";
 
 function App() {
   const [display, setDisplay] = useState(null);
+  const [test, setTest] = useState(null);
+
+  const fetchPlayers = (byTeam) => {
+    setTest(
+      player.league.standard.map((player, key) => {
+        return player.isActive === true && player.teamId === byTeam ? (
+          <Player player={player} key={key} />
+        ) : null;
+      })
+    );
+  };
+
   const teams = teamID.map((team, key) => {
-    return <Team team={team} key={key} />;
+    return (
+      <Team
+        team={team}
+        key={key}
+        fetchplayer={() => {
+          fetchPlayers(team.id);
+        }}
+      />
+    );
   });
   useEffect(() => {
     setDisplay(teams);
@@ -30,8 +51,8 @@ function App() {
   return (
     <div className="App">
       <TeamDisplay teamsDisplay={display} />
+      <div>{test}</div>
     </div>
-    // return <div className="App">{teams}</div>;
   );
 }
 
