@@ -8,10 +8,9 @@ import Player from "./components/Player";
 
 function App() {
   const [display, setDisplay] = useState(null);
-  const [test, setTest] = useState(null);
 
   const fetchPlayers = (byTeam) => {
-    setTest(
+    setDisplay(
       player.league.standard.map((player, key) => {
         return player.isActive === true && player.teamId === byTeam ? (
           <Player player={player} key={key} />
@@ -51,7 +50,6 @@ function App() {
   return (
     <div className="App">
       <TeamDisplay teamsDisplay={display} />
-      <div>{test}</div>
     </div>
   );
 }
