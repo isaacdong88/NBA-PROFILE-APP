@@ -2,7 +2,9 @@ import React from 'react'
 
 function PlayerCard(props) {
   return (
-    <div>{props.stats}</div>
+    <div>
+      {props.stats}
+    </div>
   )
 }
 

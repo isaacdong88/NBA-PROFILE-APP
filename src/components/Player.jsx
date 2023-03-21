@@ -25,21 +25,33 @@ function Player(props) {
       }, []);
 
     const getStats = async () => {
-        if (playerId !== null) {
-            const response2 = await fetch(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`)
-            const data2 = await response2.json()
-            const stats = data2.data[0].fgm
-            setStats(stats)
-        } else {
-            setStats('Data N/A')
+        // if (playerId !== null) {
+        //     const response2 = await fetch(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`)
+        //     const data2 = await response2.json()
+        //     console.log(data2)
+        //     const statsInfo = data2.data[0].fgm
+        //     setStats(statsInfo)
+        // }
+        const response2 = await fetch(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`)
+        const data2 = await response2.json()
+        const playerstats = data2.data
+        // setStats(playerstats)
+        if(playerstats.length !==0) {
+          setStats(()=> {
+            return (
+              <div>
+                <div>
+                  {playerstats[0].fga}
+                </div>
+                <div>
+                  {playerstats[0].fgm}
+                </div>
+              </div>
+            )
+          })
         }
-        // const response2 = await fetch(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`)
-        // const data2 = await response2.json()
-        // const stats = data2.data[0].fgm
-        // console.log(stats)
-        // setStats(stats)
     }
-
+    // console.log(stats.fgm)
     //   useEffect(() => {
     //     getStats();
     //   });
@@ -48,7 +60,7 @@ function Player(props) {
     <div onClick={getStats}>
         <PlayerCard stats={stats}/>
         <img className='playerImg' src={`http://cdn.nba.com/headshots/nba/latest/260x190/${props.player.personId}.png`} alt="" onError={event => {event.target.src = noImg}} />
-        {/* <div>{props.player.firstName} {props.player.lastName}</div> */}
+        <div>{props.player.firstName} {props.player.lastName}</div>
     </div>
 
   )
