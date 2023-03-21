@@ -6,6 +6,7 @@ import player from "./players.json";
 import teamID from "./models/NBAdata";
 import Player from "./components/Player";
 import PlayerCard from "./components/PlayerCard";
+import Nav from "./components/Nav";
 
 function App() {
   const [display, setDisplay] = useState(null);
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <div className="App">
+      <Nav />
       <TeamDisplay teamsDisplay={display} />
     </div>
   );

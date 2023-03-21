@@ -3,6 +3,19 @@
   height: 100vh;
 }
 
+.navbar {
+  height: 10vh;
+  font-weight: bold;
+}
+
+.teamDisplay {
+  border: solid black;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .teamLogo {
   width: 100px;
 }

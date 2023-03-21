@@ -10,7 +10,7 @@ function Player(props) {
     const getPlayer = async () => {
         const response = await fetch(`https://www.balldontlie.io/api/v1/players?search=${searchTerm}&per_page=100`);
         const data = await response.json();
-        const player = data.data.filter((player) => player.first_name === props.player.firstName)
+        const player = data.data.filter((player) => player.first_name === props.player.firstName && player.team.full_name === props.teamname)
         // console.log(data)
         // && player.team.full_name === props.teamname
         console.log(player);

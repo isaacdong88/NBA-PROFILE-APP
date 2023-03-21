@@ -2,7 +2,7 @@ import React from 'react'
 
 function TeamDisplay(props) {
   return (
-    <div>
+    <div className='teamDisplay'>
       {props.teamsDisplay}
     </div>
   )
