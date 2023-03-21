@@ -5,7 +5,7 @@ import PlayerCard from './PlayerCard';
 
 function Player(props) {
     const [playerId, setPlayerId] = useState(null)
-    const [stats, setStats] = useState(null);
+    const [stats, setStats] = useState([]);
     const searchTerm = props.player.lastName
     const getPlayer = async () => {
         const response = await fetch(`https://www.balldontlie.io/api/v1/players?search=${searchTerm}&per_page=100`);
@@ -35,21 +35,8 @@ function Player(props) {
         const response2 = await fetch(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`)
         const data2 = await response2.json()
         const playerstats = data2.data
-        // setStats(playerstats)
-        if(playerstats.length !==0) {
-          setStats(()=> {
-            return (
-              <div>
-                <div>
-                  {playerstats[0].fga}
-                </div>
-                <div>
-                  {playerstats[0].fgm}
-                </div>
-              </div>
-            )
-          })
-        }
+        setStats(data2.data)
+
     }
     // console.log(stats.fgm)
     //   useEffect(() => {
