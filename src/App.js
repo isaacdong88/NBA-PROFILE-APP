@@ -5,16 +5,16 @@ import Team from "./components/Team";
 import player from "./players.json";
 import teamID from "./models/NBAdata";
 import Player from "./components/Player";
+import PlayerCard from "./components/PlayerCard";
 
 function App() {
   const [display, setDisplay] = useState(null);
-  const [stats, setStats] = useState(null);
 
-  const fetchPlayers = (byTeam) => {
+  const fetchPlayers = (byTeam, teamName) => {
     setDisplay(
       player.league.standard.map((player, key) => {
         return player.isActive === true && player.teamId === byTeam ? (
-          <Player player={player} key={key} />
+          <Player player={player} key={key} teamname={teamName} />
         ) : null;
       })
     );
@@ -26,7 +26,7 @@ function App() {
         team={team}
         key={key}
         fetchplayer={() => {
-          fetchPlayers(team.id);
+          fetchPlayers(team.id, team.team);
         }}
       />
     );
@@ -35,8 +35,10 @@ function App() {
     setDisplay(teams);
   }, []);
 
-  // const fetchTeam = async () => {
-  //   const response = await fetch("https://www.balldontlie.io/api/v1/players");
+  // const fetchStats = async () => {
+  //   const response = await fetch(
+  //     `https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerID}`
+  //   );
   //   const data = await response.json();
   //   setStats(data);
   //   console.log(data);
@@ -52,6 +54,7 @@ function App() {
   // const teams = player.league.standard.map((tm, key) => {
   //   return <Team team={tm} key={key} />;
   // });
+
   return (
     <div className="App">
       <TeamDisplay teamsDisplay={display} />
