@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PlayerCard(props) {
+function PlayerPortal(props) {
   console.log(props.stats)
   return (
     <div>
@@ -9,4 +9,4 @@ function PlayerCard(props) {
   )
 }
 
-export default PlayerCard
+export default PlayerPortal

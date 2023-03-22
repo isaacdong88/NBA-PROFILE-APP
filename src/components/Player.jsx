@@ -1,7 +1,7 @@
 import React from 'react'
 import noImg from '../noProfileImg.png'
 import { useEffect, useState } from 'react';
-import PlayerCard from './PlayerCard';
+import PlayerPortal from './PlayerPortal';
 
 function Player(props) {
     const [playerId, setPlayerId] = useState(null)
@@ -45,7 +45,7 @@ function Player(props) {
 
   return (
     <div onClick={getStats}>
-        <PlayerCard stats={stats}/>
+        <PlayerPortal stats={stats}/>
         <img className='playerImg' src={`http://cdn.nba.com/headshots/nba/latest/260x190/${props.player.personId}.png`} alt="" onError={event => {event.target.src = noImg}} />
         <div>{props.player.firstName} {props.player.lastName}</div>
     </div>
