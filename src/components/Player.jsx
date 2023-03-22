@@ -2,10 +2,12 @@ import React from 'react'
 import noImg from '../noProfileImg.png'
 import { useEffect, useState } from 'react';
 import PlayerPortal from './PlayerPortal';
+import { createPortal } from 'react-dom';
 
 function Player(props) {
     const [playerId, setPlayerId] = useState(null)
     const [stats, setStats] = useState([]);
+    const [showModal, setShowModal] = useState(false)
     const searchTerm = props.player.lastName
     const getPlayer = async () => {
         const response = await fetch(`https://www.balldontlie.io/api/v1/players?search=${searchTerm}&per_page=100`);
@@ -36,6 +38,7 @@ function Player(props) {
         const data2 = await response2.json()
         const playerstats = data2.data
         setStats(data2.data)
+        setShowModal(true)
 
     }
     // console.log(stats.fgm)
@@ -44,9 +47,15 @@ function Player(props) {
     //   });
 
   return (
-    <div onClick={getStats}>
-        <PlayerPortal stats={stats}/>
-        <img className='playerImg' src={`http://cdn.nba.com/headshots/nba/latest/260x190/${props.player.personId}.png`} alt="" onError={event => {event.target.src = noImg}} />
+    <div>
+      {/* <button onClick={()=> setShowModal(true)}>Open</button> */}
+
+        {showModal && createPortal(
+          <PlayerPortal stats={stats} onclose={() => setShowModal(false)}/>, document.body
+        )}
+
+        {/* <PlayerPortal stats={stats}/> */}
+        <img onClick={getStats} className='playerImg' src={`http://cdn.nba.com/headshots/nba/latest/260x190/${props.player.personId}.png`} alt="" onError={event => {event.target.src = noImg}} />
         <div>{props.player.firstName} {props.player.lastName}</div>
     </div>
 
