@@ -7,7 +7,7 @@ function PlayerPortal(props) {
   return (
    <div className='overlay'>
       <div className='modalContainer'>
-        <div>
+        <div className='close-btn'>
           <button onClick={props.onclose}>X</button>
         </div>
         <div className='imgModalContainer'>

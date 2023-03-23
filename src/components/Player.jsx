@@ -36,15 +36,15 @@ function Player(props) {
         // }
         const response2 = await fetch(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`)
         const data2 = await response2.json()
-        const playerstats = data2.data
+        // const playerstats = data2.data
         setStats(data2.data)
         setShowModal(true)
 
     }
     // console.log(stats.fgm)
-    //   useEffect(() => {
-    //     getStats();
-    //   });
+      // useEffect(() => {
+      //   getStats();
+      // }, []);
 
   return (
     <div>
