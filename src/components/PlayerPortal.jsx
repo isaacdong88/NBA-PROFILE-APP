@@ -15,7 +15,7 @@ function PlayerPortal(props) {
         <div className='imgModalContainer'>
           <img className='playerImgModal' src={`http://cdn.nba.com/headshots/nba/latest/260x190/${props.personId}.png`} alt="" onError={event => {event.target.src = noImg}} />
         </div>
-        <div>
+        <div className='playerName'>
           {props.playerName.firstName} {props.playerName.lastName}
         </div>
         <div>

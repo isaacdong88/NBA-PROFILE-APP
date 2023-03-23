@@ -39,16 +39,21 @@
 }
 
 .teamLogo {
-  /* border: solid transparent; */
+  /* border: solid black; */
   width: 230px;
   height: 110px;
-  /* margin: 15px; */
-  /* margin-top: 1px; */
   margin-left: 10px;
 }
 
+.teamLogo:hover {
+  /* border: solid black; */
+  width: 250px;
+  height: 130px;
+  margin-left: 3px;
+}
+
 .playerImg {
-  border: solid black;
+  border: ridge black;
   border-radius: 15px;
   height: 150px;
   width: 200px;
@@ -56,6 +61,14 @@
   background-image: url("./cardbackground.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.playerImg:hover {
+  border: ridge black;
+  border-radius: 10px;
+  height: 155px;
+  width: 205px;
+  margin-left: 8px;
 }
 
 .imgModalContainer {
@@ -75,13 +88,14 @@
   background-repeat: no-repeat;
 }
 
-/* .playerImg:hover {
-  border: solid black;
-  border-radius: 10px;
-  height: 160px;
-  width: 210px;
-  margin-left: 8px;
-} */
+.playerName {
+  /* border: solid beige; */
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.5);
@@ -104,7 +118,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   /* display: flex; */
-  background-image: url("https://us.123rf.com/450wm/retouchman/retouchman2210/retouchman221000095/193244031-basketball-on-fire-on-an-basketball-court-3d-render.jpg?ver=6");
+  background-image: url("./cardimage.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
