@@ -51,7 +51,7 @@ function Player(props) {
       {/* <button onClick={()=> setShowModal(true)}>Open</button> */}
 
         {showModal && createPortal(
-          <PlayerPortal stats={stats} onclose={() => setShowModal(false)}/>, document.body
+          <PlayerPortal personId={props.player.personId} stats={stats} onclose={() => setShowModal(false)}/>, document.body
         )}
 
         {/* <PlayerPortal stats={stats}/> */}

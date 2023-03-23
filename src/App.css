@@ -34,13 +34,40 @@
 
 .playerImg {
   border: solid black;
+  border-radius: 10px;
   height: 150px;
   width: 200px;
   margin-left: 8px;
 }
 
+/* .playerImg:hover {
+  border: solid black;
+  border-radius: 10px;
+  height: 160px;
+  width: 210px;
+  margin-left: 8px;
+} */
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: solid black;
+  /* background-color: blue; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
 .modalContainer {
   border: solid black;
-  width: 80px;
-  height: 80px;
+  width: 400px;
+  height: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* display: flex; */
+  background-color: aquamarine;
 }
