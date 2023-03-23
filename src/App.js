@@ -5,7 +5,6 @@ import Team from "./components/Team";
 import player from "./players.json";
 import teamID from "./models/NBAdata";
 import Player from "./components/Player";
-import PlayerCard from "./components/PlayerPortal";
 import Nav from "./components/Nav";
 
 function App() {

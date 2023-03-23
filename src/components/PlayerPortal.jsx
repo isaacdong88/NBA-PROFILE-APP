@@ -7,9 +7,20 @@ function PlayerPortal(props) {
   return (
    <div className='overlay'>
       <div className='modalContainer'>
-        <img className='playerImg' src={`http://cdn.nba.com/headshots/nba/latest/260x190/${props.personId}.png`} alt="" onError={event => {event.target.src = noImg}} />
-        {props.stats[0]?.fga ? props.stats[0].fga : "N/A"} 
-        <button onClick={props.onclose}>Close</button>
+        <div>
+          <button onClick={props.onclose}>X</button>
+        </div>
+        <div className='imgModalContainer'>
+          <img className='playerImgModal' src={`http://cdn.nba.com/headshots/nba/latest/260x190/${props.personId}.png`} alt="" onError={event => {event.target.src = noImg}} />
+        </div>
+        <div>
+          {props.playerName.firstName} {props.playerName.lastName}
+        </div>
+        <div>
+          {props.stats[0]?.fga ? props.stats[0].fga : "N/A"} <br />
+          {props.stats[0]?.fgm ? props.stats[0].fgm : "N/A"} 
+
+        </div>
       </div>
    </div> 
 

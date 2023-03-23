@@ -4,6 +4,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-image: url("https://wallpapercave.com/wp/wp5171754.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .navbar {
@@ -34,10 +37,30 @@
 
 .playerImg {
   border: solid black;
-  border-radius: 10px;
+  border-radius: 15px;
   height: 150px;
   width: 200px;
   margin-left: 8px;
+  background-image: url("./cardbackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.imgModalContainer {
+  /* border: solid black; */
+  display: flex;
+  justify-content: center;
+}
+
+.playerImgModal {
+  border: solid black;
+  border-radius: 15px;
+  height: 180px;
+  width: 250px;
+  margin-left: 8px;
+  background-image: url("./cardbackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* .playerImg:hover {
@@ -62,7 +85,7 @@
 
 .modalContainer {
   border: solid black;
-  width: 400px;
+  width: 360px;
   height: 500px;
   position: fixed;
   top: 50%;
@@ -70,4 +93,6 @@
   transform: translate(-50%, -50%);
   /* display: flex; */
   background-color: aquamarine;
+  font-weight: bold;
+  font-size: 18px;
 }

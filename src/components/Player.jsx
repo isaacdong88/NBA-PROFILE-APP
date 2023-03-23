@@ -51,12 +51,12 @@ function Player(props) {
       {/* <button onClick={()=> setShowModal(true)}>Open</button> */}
 
         {showModal && createPortal(
-          <PlayerPortal personId={props.player.personId} stats={stats} onclose={() => setShowModal(false)}/>, document.body
+          <PlayerPortal playerName={props.player} personId={props.player.personId} stats={stats} onclose={() => setShowModal(false)}/>, document.body
         )}
 
         {/* <PlayerPortal stats={stats}/> */}
         <img onClick={getStats} className='playerImg' src={`http://cdn.nba.com/headshots/nba/latest/260x190/${props.player.personId}.png`} alt="" onError={event => {event.target.src = noImg}} />
-        <div>{props.player.firstName} {props.player.lastName}</div>
+        {/* <div>{props.player.firstName} {props.player.lastName}</div> */}
     </div>
 
   )
