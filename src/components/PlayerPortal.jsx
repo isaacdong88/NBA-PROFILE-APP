@@ -5,8 +5,10 @@ import noImg from '../noProfileImg.png'
 function PlayerPortal(props) {
   console.log(props.stats)
   return (
-   <div className='overlay'>
-      <div className='modalContainer'>
+   <div onClick={props.onclose} className='overlay'>
+      <div onClick={(e) => {
+        e.stopPropagation();
+      }} className='modalContainer'>
         <div className='close-btn'>
           <button onClick={props.onclose}>X</button>
         </div>

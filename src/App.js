@@ -35,29 +35,14 @@ function App() {
     setDisplay(teams);
   }, []);
 
-  // const fetchStats = async () => {
-  //   const response = await fetch(
-  //     `https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerID}`
-  //   );
-  //   const data = await response.json();
-  //   setStats(data);
-  //   console.log(data);
-  // };
-
-  // useEffect(() => {
-  //   fetchTeam();
-  // }, []);
-  // fetchTeam();
-  // useEffect(() => {
-  //   fetchTeam(), [];
-  // });
-  // const teams = player.league.standard.map((tm, key) => {
-  //   return <Team team={tm} key={key} />;
-  // });
+  //View team functionality for button
+  const viewTeam = () => {
+    setDisplay(teams);
+  };
 
   return (
     <div className="App">
-      <Nav />
+      <Nav viewTeam={viewTeam} />
       <TeamDisplay teamsDisplay={display} />
     </div>
   );

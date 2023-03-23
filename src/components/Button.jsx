@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Button() {
+function Button(props) {
   return (
-    <div>Button</div>
+    <div className='view-btn'>
+      <button onClick={props.viewTeam}>View Teams</button>
+    </div>
   )
 }
 
