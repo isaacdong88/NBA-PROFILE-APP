@@ -26,7 +26,7 @@ function App() {
         team={team}
         key={key}
         fetchplayer={() => {
-          fetchPlayers(team.id, team.team);
+          fetchPlayers(team.id, team.team); //function perimeter used in fetchplayer function to test tenary conditions
         }}
       />
     );

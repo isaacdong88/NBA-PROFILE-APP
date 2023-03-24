@@ -20,18 +20,19 @@ function PlayerPortal(props) {
         </div>
         <div className='stats-ctn'>
           <div>Season <br />{props.stats[0]?.season ? props.stats[0].season : "N/A"}</div>
+          <div>Position <br />{props.playerName.teamSitesOnly.posFull}</div>
           <div>Games Played <br />{props.stats[0]?.games_played ? props.stats[0].games_played : "N/A"}</div>
           <div>Minutes Played <br />{props.stats[0]?.min ? props.stats[0].min : "N/A"}</div>
           <div>Points <br />{props.stats[0]?.pts ? props.stats[0].pts : "N/A"}</div>
           <div>Field Goals Made <br />{props.stats[0]?.fgm ? props.stats[0].fgm : "N/A"}</div>
           <div>Field Goals Attempted <br />{props.stats[0]?.fga ? props.stats[0].fga : "N/A"}</div>
-          <div>Field Goal Percentage <br />{props.stats[0]?.fg_pct ? props.stats[0].fg_pct*100 : "N/A"}%</div>
+          <div>Field Goal Percentage <br />{props.stats[0]?.fg_pct ? Math.trunc(props.stats[0].fg_pct*100) : "N/A"}%</div>
           <div>3 Points Made <br />{props.stats[0]?.fg3m ? props.stats[0].fg3m : "N/A"}</div>
           <div>3 Points Attempted <br />{props.stats[0]?.fg3a ? props.stats[0].fg3a : "N/A"}</div>
-          <div>3 Point Percentage <br />{props.stats[0]?.fg3_pct ? props.stats[0].fg3_pct*100 : "N/A"}%</div>
+          <div>3 Point Percentage <br />{props.stats[0]?.fg3_pct ? Math.trunc(props.stats[0].fg3_pct*100) : "N/A"}%</div>
           <div>Free Throws Made <br />{props.stats[0]?.ftm ? props.stats[0].ftm : "N/A"}</div>
           <div>Free Throws Attempted <br />{props.stats[0]?.fta ? props.stats[0].fta : "N/A"}</div>
-          <div>Free Throw Percentage <br />{props.stats[0]?.ft_pct ? props.stats[0].ft_pct*100 : "N/A"}%</div>
+          <div>Free Throw Percentage <br />{props.stats[0]?.ft_pct ? Math.trunc(props.stats[0].ft_pct*100) : "N/A"}%</div>
           <div>Offensive Rebounds <br />{props.stats[0]?.oreb ? props.stats[0].oreb : "N/A"}</div>
           <div>Defensive Rebounds <br />{props.stats[0]?.dreb ? props.stats[0].dreb : "N/A"}</div>
           <div>Rebounds <br />{props.stats[0]?.reb ? props.stats[0].reb : "N/A"}</div>

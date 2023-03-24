@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-image: url("https://media.istockphoto.com/id/1269112855/video/basketball-field-with-basketball-board-and-ball-on-the-floor.jpg?s=640x640&k=20&c=1b0vYOR7FW6-_VxZ1w8vT33gFVoZLv8QgYqlQOjBK8c=");
+  background-image: url("./rainbowbasketball.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -18,7 +18,9 @@
   justify-content: center;
   align-items: center;
   color: aliceblue;
-  font-size: 40px;
+  font-size: 48px;
+  text-shadow: 2px 3px 3px rgb(39, 9, 9);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   /* background-color: rgb(125, 49, 17); */
 }
 
@@ -116,7 +118,7 @@
   border: groove rgb(39, 9, 9);
   width: 150px;
   height: 50px;
-  font-size: 13.5px;
+  font-size: 11px;
   margin-top: 8px;
   display: flex;
   justify-content: center;
@@ -125,7 +127,7 @@
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   border: solid black;
   /* background-color: blue; */
   position: fixed;
@@ -152,6 +154,7 @@
   font-weight: bold;
   font-size: 18px;
   color: aliceblue;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .view-btn {
@@ -163,6 +166,17 @@
 
 .view-btn button {
   font-weight: bold;
+  height: 65px;
+  width: 65px;
+  border-radius: 50px;
+  background-color: transparent;
+  background-image: url("./basketballicon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  font-size: 15px;
+  border-color: transparent;
+  font-family: cursive;
 }
 
 .close-btn {

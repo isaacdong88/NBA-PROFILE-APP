@@ -48,7 +48,7 @@ const teamID = [
         id: "1610612754"
     },
     {
-        team: "Los Angeles Clippers",
+        team: "LA Clippers",
         id: "1610612746"
     },
     {
@@ -58,6 +58,10 @@ const teamID = [
     {
         team: "Memphis Grizzlies",
         id: "1610612763"
+    },
+    {
+        team: "Utah Jazz",
+        id: "1610612762"
     },
     {
         team: "Miami Heat",
@@ -110,10 +114,6 @@ const teamID = [
     {
         team: "Toronto Raptors",
         id: "1610612761"
-    },
-    {
-        team: "Utah Jazz",
-        id: "1610612762"
     },
     {
         team: "Washington Wizards",
