@@ -28,34 +28,18 @@ function Player(props) {
       }, []);
 
     const getStats = async () => {
-        // if (playerId !== null) {
-        //     const response2 = await fetch(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`)
-        //     const data2 = await response2.json()
-        //     console.log(data2)
-        //     const statsInfo = data2.data[0].fgm
-        //     setStats(statsInfo)
-        // }
         const response2 = await fetch(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`)
         const data2 = await response2.json()
-        // const playerstats = data2.data
         setStats(data2.data)
         setShowModal(true)
 
     }
-    // console.log(stats.fgm)
-      // useEffect(() => {
-      //   getStats();
-      // }, []);
 
   return (
     <div>
-      {/* <button onClick={()=> setShowModal(true)}>Open</button> */}
-
         {showModal && createPortal(
           <PlayerPortal playerName={props.player} personId={props.player.personId} stats={stats} onclose={() => setShowModal(false)}/>, document.body
         )}
-
-        {/* <PlayerPortal stats={stats}/> */}
         <img onClick={getStats} className='playerImg' src={`http://cdn.nba.com/headshots/nba/latest/260x190/${props.player.personId}.png`} alt="" onError={event => {event.target.src = noImg}} />
         {/* <div>{props.player.firstName} {props.player.lastName}</div> */}
     </div>

@@ -9,6 +9,7 @@ import Nav from "./components/Nav";
 
 function App() {
   const [display, setDisplay] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const fetchPlayers = (byTeam, teamName) => {
     setDisplay(
@@ -31,16 +32,29 @@ function App() {
       />
     );
   });
+
   useEffect(() => {
     setDisplay(teams);
   }, []);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 4000);
 
   //View team functionality for button
   const viewTeam = () => {
     setDisplay(teams);
   };
 
-  return (
+  return loading ? (
+    <div className="App">
+      <img
+        className="loadingImg"
+        src="https://media0.giphy.com/media/4qify5sjr92ec/giphy.gif"
+        alt=""
+      />
+    </div>
+  ) : (
     <div className="App">
       <Nav viewTeam={viewTeam} />
       <TeamDisplay teamsDisplay={display} />

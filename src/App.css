@@ -9,6 +9,11 @@
   background-size: cover;
 }
 
+.loadingImg {
+  width: 100%;
+  height: 100vh;
+}
+
 .navbar {
   width: 100%;
   height: 9.5vh;
