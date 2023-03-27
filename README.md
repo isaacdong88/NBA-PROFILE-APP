@@ -15,7 +15,7 @@ Implementation:
 
 Installation:
 
-    1. Run nom start in terminal to start the application
+    1. Run npm start in terminal to start the application
 
 Application Features:
 
