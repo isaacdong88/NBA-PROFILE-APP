@@ -164,11 +164,25 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@keyframes jump {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
 .view-btn {
   /* border: green solid; */
+  margin-top: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: jump 1s ease-in infinite;
 }
 
 .view-btn button {
