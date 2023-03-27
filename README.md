@@ -23,7 +23,7 @@ Application Features:
     2. Display all players on the Team
     3. View a modal pop-up for each player that displays their stats
 
-[View NBA APP]()
+[View NBA APP](https://master--tourmaline-bunny-66bbfc.netlify.app/)
 
 ![Title Screen](https://raw.githubusercontent.com/isaacdong88/NBA-PROFILE-APP/master/src/NBAWIKI.png)
 
