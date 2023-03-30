@@ -37,7 +37,7 @@
 
 .teamDisplay {
   /* border: solid black; */
-  width: 100%;
+  width: 100vw;
   height: 90vh;
   display: flex;
   flex-wrap: wrap;
